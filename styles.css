@@ -1,36 +1,68 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+/* Set the height of html and body to ensure full viewport usage */
+html, body {
+    height: 100%;
     margin: 0;
-    padding: 0;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
 }
+
+/* Container holding the sections */
+.container {
+    display: flex;
+    flex-direction: column; /* Stack the sections vertically */
+    height: 100%; /* Use the full height of the page */
+}
+
+/* Header Section (20% height) */
 header {
-    background-color: #333;
-    color: white;
-    padding: 20px;
+    background-color: #0866ff; /* Cherry Red */
+    color: black;
     text-align: center;
+    flex: 0 0 10%; /* 20% height */
 }
-nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
-nav ul li a {
-    text-decoration: none;
-    color: #333;
-}
+
+/* Main Section (70% height) */
 main {
-    padding: 20px;
+    background-color: #E9EBEE; /* White background */
+    flex: 0 0 85%; /* 70% height */
 }
-footer {
-    background-color: #333;
-    color: white;
+
+a {
+    text-decoration: none;
+}
+
+/* Topic boxes styling */
+.topic-boxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    margin-left: 10%;
+    margin-top: 10%;
+    margin-right : 10%;
+    margin-bottom: 10%;
     text-align: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+}
+
+.topic-box {
+    background-color: #0866ff; /* Navy Blue */
+    color: #fff;
+    text-align: center;
+    padding: 5% 5%;
+    font-size: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for topic boxes */
+.topic-box:hover {
+    background-color: #003366; /* Darker Navy Blue */
+}
+
+/* Footer Section (10% height) */
+footer {
+    background-color: #0866ff; /* Cherry Red */
+    color: black;
+    text-align: center;
+    flex: 0 0 5%; /* 10% height */
 }
