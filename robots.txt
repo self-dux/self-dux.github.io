@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://self-dux.github.io/sitemap.xml
