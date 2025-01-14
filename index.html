@@ -1,154 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech Commands Hub</title>
-    <style>
-        /* General Reset */
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            height: 100vh; /* Full viewport height */
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* Header Section */
-        header {
-            flex: 0 0 5%; /* 5% of page height */
-            background-color: #e24545;
-            color: white;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* Content Section */
-        .content {
-            flex: 1 1 auto; /* Takes up remaining space */
-            padding: 16px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 16px;
-            overflow-y: auto; /* Enables scrolling for overflow */
-        }
-
-        /* Tiles */
-        .tile {
-            padding: 16px;
-            border-radius: 8px;
-            color: white;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            text-decoration: none; /* Remove underline */
-            display: block;
-        }
-
-        .tile h3 {
-            margin-top: 0;
-        }
-
-        /* Unique background colors for tiles */
-        .tile:nth-child(1) { background-color: #4caf50; } /* Green */
-        .tile:nth-child(2) { background-color: #2196f3; } /* Blue */
-        .tile:nth-child(3) { background-color: #ff9800; } /* Orange */
-        .tile:nth-child(4) { background-color: #9c27b0; } /* Purple */
-        .tile:nth-child(5) { background-color: #795548; } /* Brown */
-        .tile:nth-child(6) { background-color: #607d8b; } /* Teal */
-    </style>
-</head>
-<body>
-    <!-- Header Section -->
-    <header>
-        <h1>Quick Self Guides</h1>
-    </header>
-
-    <!-- Content Section -->
-    <div class="content">
-        <a href="docker.html" target="_blank" class="tile">
-            <h3>Docker</h3>
-            <p>This is a paragraph inside the first tile.</p>
-            <ul>
-                <li>First point</li>
-                <li>Second point</li>
-                <li>Third point</li>
-            </ul>
-        </a>
-        <a href="aws.html" target="_blank" class="tile">
-            <h3>AWS</h3>
-            <p>This is a paragraph inside the second tile.</p>
-            <ul>
-                <li>Point one</li>
-                <li>Point two</li>
-            </ul>
-        </a>
-        <a href="linux.html" target="_blank" class="tile">
-            <h3>Linux</h3>
-            <p>This is a paragraph inside the third tile. It has more content to demonstrate flexibility.</p>
-            <ul>
-                <li>Another point</li>
-                <li>Yet another point</li>
-                <li>Additional point</li>
-            </ul>
-        </a>
-        <a href="page4.html" target="_blank" class="tile">
-            <h3>Tile 4</h3>
-            <p>Here is another tile with its own content.</p>
-        </a>
-        <a href="page5.html" target="_blank" class="tile">
-            <h3>Tile 5</h3>
-            <p>This is a fifth tile to show unique background colors for all tiles.</p>
-            <ul>
-                <li>Unique design</li>
-                <li>Colorful layout</li>
-            </ul>
-        </a>
-        <a href="page6.html" target="_blank" class="tile">
-            <h3>Tile 6</h3>
-            <p>This is the sixth tile with its own content.</p>
-        </a>
-        <a href="page6.html" target="_blank" class="tile">
-            <h3>Tile 6</h3>
-            <p>This is the sixth tile with its own content.</p>
-        </a>
-        <a href="page6.html" target="_blank" class="tile">
-            <h3>Tile 6</h3>
-            <p>This is the sixth tile with its own content.</p>
-        </a>
-        <a href="page6.html" target="_blank" class="tile">
-            <h3>Tile 6</h3>
-            <p>This is the sixth tile with its own content.</p>
-        </a>
-        <a href="page6.html" target="_blank" class="tile">
-            <h3>Tile 6</h3>
-            <p>This is the sixth tile with its own content.</p>
-        </a>
-        <a href="page6.html" target="_blank" class="tile">
-            <h3>Tile 6</h3>
-            <p>This is the sixth tile with its own content.</p>
-        </a>
-        <a href="page6.html" target="_blank" class="tile">
-            <h3>Tile 6</h3>
-            <p>This is the sixth tile with its own content.</p>
-        </a>
-        <a href="page6.html" target="_blank" class="tile">
-            <h3>Tile 6</h3>
-            <p>This is the sixth tile with its own content.</p>
-        </a>
-        <a href="page6.html" target="_blank" class="tile">
-            <h3>Tile 6</h3>
-            <p>This is the sixth tile with its own content.</p>
-        </a>
-        <a href="page6.html" target="_blank" class="tile">
-            <h3>Tile 6</h3>
-            <p>This is the sixth tile with its own content.</p>
-        </a>
-        <a href="page6.html" target="_blank" class="tile">
-            <h3>Tile 6</h3>
-            <p>This is the sixth tile with its own content.</p>
-        </a>
-    </div>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Quick Self Guides</title>
+        <link rel="stylesheet" href="css/index.css">
+    </head>
+    <body>
+        <header>
+            <h1>Quick Self Guides</h1>
+        </header>
+        <div class="content">
+            <a href="html/linux.html" target="_blank" class="tile">
+                <h3>Linux commands</h3>
+                <ul>
+                    <li>File operations</li>
+                    <li>Directory operations</li>
+                    <li>File viewing</li>
+                    <li>Redirection operators</li>
+                </ul>
+            </a>
+        </div>
+    </body>
 </html>

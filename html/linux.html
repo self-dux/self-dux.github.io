@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Linux commands usage guide</title>
+    <link rel="stylesheet" href="../css/linux.css">
+</head>
+<body>
+    <header>
+        <a href="../index.html"><h1>Linux commands usage guide</h1></a>
+    </header>
+
+    <div class="container">
+        <div class="tile">
+            <h3>File operations</h3>
+            <ol>
+                <li>List the contents of a directory, including hidden files, with detailed information. <code>ls -la</code></li>
+                <li>File copy. <code>cp f1 f2</code></li>
+                <li>Rename or move file. <code>mv f1 f2</code></li>
+                <li>Remove file <code>rm f</code></li>
+                <li>Create an empty file. <code>touch f</code></li>
+                <li>Find all txt files in the directory. <code>find d -name ‘*.txt’</code></li>
+                <li>Determine the type of a file. <code>file f</code></li>
+            </ol>
+        </div>
+        <div class="tile">
+            <h3>Directory operations</h3>
+            <ol>
+                <li>Print working directory. <code>pwd</code></li>
+                <li>Directory copy.  <code>cp -r d1 d2</code></li>
+                <li>Rename or move director. <code>mv d1 d2</code></li>
+                <li>Create a new directory. <code>mkdir d</code></li>
+                <li>Remove
+                    <ul>
+                        <li>an empty directory. <code>rmdir d</code></li>
+                        <li>directory and its content. <code>rm -r d</code></li>
+                    </ul>
+                </li>
+                <li>Find all directories starting with 'a' in the directory. <code>find d -name ‘a*’</code></li>
+                <li>Change directory <code>cd d</code>
+                    <ul>
+                        <li>to the previous directory. <code>cd -</code></li>
+                        <li>to the parent directory. <code>cd ..</code></li>
+                        <li>to the home directory. <code>cd ~</code></li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        <div class="tile">
+            <h3>File viewing</h3>
+            <ol>
+                <li>Show content. <code>cat file</code></li>
+                <li>Concatenate content of file1 & file2 and display. <code>cat file1 file2</code></li>
+                <li>Scroll through the content. <code>less f</code></li>
+                <li>Show first 20 lines. <code>head -n 20 f</code></li>
+                <li>Show last
+                    <ul>
+                        <li>20 lines. <code>tail -n 20 f</code>
+                        <li>lines as it changes. <code>tail -f f</code></li>
+                    </ul> 
+                </li>
+                <li>Remove content of a directory. <code>rm -r d</code></li>
+                <li>Create an empty file. <code>touch f</code></li>
+                <li>Find all txt files in the directory. <code>find d -name ‘*.txt’</code></li>
+            </ol>
+        </div>
+        <div class="tile">
+            <h3>Redirection operators</h3>
+            <ol>
+                <li>Overwriting content if file exists, otherwise file will be created and written. <code>ls > f1.txt</code></li>
+                <li>Appending content if file exists, otherwise file will be created and written. <code>ls >> f2.txt </code></li>
+                <li>Read the file's content and use it as input for the command. <code>grep 'pattern' < f3.txt</code></li>
+                <li>Pass the output of one command as the input to another command. <code>ls | grep 'pattern'</code></li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>
