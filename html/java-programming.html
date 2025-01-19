@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="java programming">
+    <title>Java programming</title>
+    <link rel="stylesheet" href="../css/java-programming.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3HWQ2Q7KQD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-3HWQ2Q7KQD');
+    </script>
+</head>
+<body>
+    <header>
+        <a href="../index.html"><h1>Java programming</h1></a>
+    </header>
+
+    <div class="container">
+        <div class="tile">
+            <h3>Programming paradigms</h3>
+            <ol>
+                <li>Imperative -> How</li>
+                <li>Declarative -> What</li>
+            </ol>
+        </div>
+        <div class="tile">
+            <h3>Main functional interfaces</h3>
+            <table>
+                <tr>
+                    <th>Interface</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Functions</td>
+                    <td>Takes input and return output</td>
+                </tr>
+                <tr>
+                    <td>Consumers</td>
+                    <td>Takes input and no return</td>
+                </tr>
+                <tr>
+                    <td>Predicates</td>
+                    <td>Takes input and return boolean</td>
+                </tr>
+                <tr>
+                    <td>Suppliers</td>
+                    <td>Takes no input and return output</td>
+                </tr>
+                <tr>
+                    <td>Runnable</td>
+                    <td>Represent a task, no input and no output</td>
+                </tr>
+                <tr>
+                    <td>Callable</td>
+                    <td>Represent a task, no input and return output</td>
+                </tr>
+            </table>
+            <p>Refer <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html" style="color: blue; text-decoration: underline;" target="_blank">java.util.function</a> package</p>
+        </div>
+        <div class="tile">
+            <h3>Java streams</h3>
+            <p>Way of switch from imperative to declarative programming.</p>
+            <ol>
+                <li>Start with collections [ Arrays, Lists, Sets, Maps ].</li>
+                <li>Process is done through intermediate operators [ Filter, Map, Reduce etc. ] and returns stream back.</li>
+                <li>Ends with terminal operators [ Sum, Collect, Average etc. ] and returns a concrete value.</li>
+            </ol>
+        </div>
+        <div class="tile">
+            <h3>Communication techniques</h3>
+            <ol>
+                <li>Synchronous + Blocking</li>
+                <li>Asynchronous + Blocking</li>
+                <li>Synchronous  + Non-Blocking</li>
+                <li>Asynchronous + Non-Blocking</li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>
