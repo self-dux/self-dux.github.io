@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="analyse memory leaks in java applications">
+    <title>Analyse memory leaks in Java applications</title>
+    <link rel="stylesheet" href="../css/java-memory-leak.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3HWQ2Q7KQD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-3HWQ2Q7KQD');
+    </script>
+</head>
+<body>
+    <header>
+        <a href="../index.html"><h1>Analyse memory leaks in Java applications</h1></a>
+    </header>
+
+    <div class="container">
+        <div class="tile">
+            <h3>Java memory model</h3>
+            <ol>
+                <li>Stack
+                    <ul>
+                        <li>Each thread has its own block of memory in side the stack.</li>
+                        <li>References</li>
+                        <li>When stack memory goes full, StackoverflowError can be seen.</li>
+                    </ul>
+                </li>
+                <li>Heap
+                    <ul>
+                        <li>Shared by all the threads.</li>
+                        <li>References</li>
+                        <li>When stack memory goes full, StackoverflowError can be seen</li>
+                        <li>Structure
+                            <ul>
+                                <li>Young generation -> short lived objects -> very frequent Minor GC
+                                    <ul>
+                                        <li>Eden space</li>
+                                        <li>Survivor space
+                                            <ul>
+                                                <li>s0</li>
+                                                <li>s1</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>Old generation -> long lived objects -> less frequent Major GC
+                                    <ul>
+                                        <li>String pool reside here</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>Metaspace [Java 8 onwards]
+                    <ul>
+                        <li>Class metadata reside here</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        <div>
+            <div class="tile">
+                <h3>Garbage collector</h3>
+                <ol>
+                    <li>JVM controls GC cycles & runs periodically</li>
+                    <li>GC phases
+                        <ul>
+                            <li>Minor</li>
+                            <li>Major</li>
+                        </ul>
+                    </li>
+                    <li>Life cycle of an object
+                        <ul>
+                            <li>New -> Eden -> Survivor -> Old Gen</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            <div style="padding: 8px;"></div>
+            <div class="tile">
+                <h3>What is memory leak ? </h3>
+                <ol>
+                    <li>When a program fails to release memory it no longer needs and gradually consumes more memory over time.</li>
+                </ol>
+            </div>
+        </div>
+        <div class="tile">
+            <h3>Sampling vs Profiling</h3>
+            <table border="1">
+                <tr>
+                    <th></th>
+                    <th>Sampling</th>
+                    <th>Profiling</th>
+                </tr>
+                <tr>
+                    <th>Data collection</th>
+                    <td>Periodically takes snapshots of the call stack.</td>
+                    <td>Records detailed information for every method call or event.</td>
+                </tr>
+                <tr>
+                    <th>Overhead</th>
+                    <td>Low, as it collects data intermittently.</td>
+                    <td>High, due to continuous monitoring and logging.</td>
+                </tr>
+                <tr>
+                    <th>Accuracy</th>
+                    <td>Less accurate for precise timing or rarely executed code.</td>
+                    <td>Very accurate for detailed performance analysis.</td>
+                </tr>
+            </table>
+        </div>
+        <div class="tile">
+            <h3>Thread dump</h3>
+            <ol>
+                <li>Snapshot of all threads in application for a given time.</li>
+                <li>When to get a thread-dump ?
+                    <ul>
+                        <li>High CPU usage</li>
+                        <li>Application slow/ hang</li>
+                    </ul>
+                </li>
+                <li>It’s very helpful to get a thread-dump, when stack overflow error occurs
+                    <ul>
+                        <li>Stack overflow error
+                            <ul>
+                                <li>Stack runs out of space</li>
+                                <li>Deep or infinite recursion</li>
+                                <li>Excessive method calls</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>How to get a thread dump [ local & remote] ?
+                    <ul>
+                        <li>jstack 3054 > dl_td_1.tdump</li>
+                    </ul>
+                </li>
+                <li>Tools to analyse a thread dump
+                    <ul>
+                        <li><a href="https://mkbrv.github.io/tda/" style="color: blue; text-decoration: underline;" target="_blank">Thread dump analysis tool</a></li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        <div class="tile">
+            <h3>Heap dump</h3>
+            <ol>
+                <li>Snapshot of objects in the heap</li>
+                <li>When to get a heap dump ?
+                    <ul>
+                        <li>OutofMemory error
+                            <ul>
+                                <li>Not registering listeners and callbacks from objects</li>
+                                <li>Usage of static collections/ Unbound collections</li>
+                                <li>Excessive object creation</li>
+                                <li>Heavy String operations [ Usage of + ]</li>
+                                <li>Initiating collections with large default size</li>
+                                <li>Improper configurations of different frameworks</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>How to get a heap dump [ local & remote] ?
+                    <ul>
+                        <li>jmap -dump:format=b,file=heap_dump.hprof 12345</li>
+                    </ul>
+                </li>
+                <li>Tools to analyse a heap dump
+                    <ul>
+                        <li><a href="https://visualvm.github.io" style="color: blue; text-decoration: underline;" target="_blank">Visual VM</a></li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>
