@@ -1,70 +1,14 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-}
-
 header {
     background-color: #2196f3;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    flex: 0 0 5%;
-}
-
-header h1 {
-    margin: 0;
-}
-
-code {
-    font-size: 120%;
-    background-color: #ccc;
-}
-
-a {
-    text-decoration: none;
-    color: white;
 }
 
 table {
     border-collapse: collapse; /* Ensures borders don't double */
     width: 100%; /* Optional: Adjusts table width */
-  }
-  th, td {
+}
+
+th, td {
     border: 1px solid black; /* Adds borders to table cells */
     padding: 8px; /* Adds space inside cells */
     text-align: left; /* Aligns text to the left */
-  }
-
-.container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-    gap: 16px;
-    padding: 16px;
-    overflow-y: auto;
-    align-items: start;
-}
-
-.tile {
-    background-color: #f4f4f4;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 16px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.tile h3 {
-    margin-top: 0;
-}
-
-.tile ol {
-    padding-left: 10px;
-}
-
-.tile ol li {
-    margin-bottom: 4px;
 }
