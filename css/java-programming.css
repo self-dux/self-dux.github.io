@@ -9,7 +9,7 @@ body {
 }
 
 header {
-    background-color: #4caf50;
+    background-color: #ff9800;
     color: white;
     text-align: center;
     padding: 10px 0;
@@ -29,6 +29,16 @@ a {
     text-decoration: none;
     color: white;
 }
+
+table {
+    border-collapse: collapse; /* Ensures borders don't double */
+    width: 100%; /* Optional: Adjusts table width */
+  }
+  th, td {
+    border: 1px solid black; /* Adds borders to table cells */
+    padding: 8px; /* Adds space inside cells */
+    text-align: left; /* Aligns text to the left */
+  }
 
 .container {
     display: grid;
