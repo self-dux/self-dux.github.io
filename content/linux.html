@@ -39,7 +39,7 @@
         <div class="tile">
             <h3>Directory operations</h3>
             <ol>
-                <li>Print working directory. <code>pwd</code></li>
+                <li>Print Working Directory. <code>pwd</code></li>
                 <li>Directory copy.  <code>cp -r d1 d2</code></li>
                 <li>Rename or move director. <code>mv d1 d2</code></li>
                 <li>Create a new directory. <code>mkdir d</code></li>
@@ -75,12 +75,50 @@
             </ol>
         </div>
         <div class="tile">
+            <h3>Access control</h3>
+            <ol>
+                <li>Ownership of a file or directory
+                    <ul>
+                        <li>Change owner <code>chown owner-name f</code></li>
+                        <li>Change owner & group <code>chown owner-name:group-name f</code></li>
+                    </ul>
+                </li>
+                <li>Permissions of a file or directory.
+                    <ul>
+                        <li>The owner/user of the file can read, write, and execute the file. The group and others can read and execute the file, but cannot modify it. 
+                            <ul>
+                                <li><code>chmod 755 f</code> [ 7 -> Owner/ User, 5 -> Group, 5 -> Other permissions ]</li>
+                                <li><code>chmod u+rwx,go+rx f</code></li>
+                            </ul>
+                        </li>
+                        <li>Remove write permission from group, remove write and execute from other. <code>chmod g-w,o-wx f</code></li>
+                        <li>Add execute permission for all. <code>chmod a+x f</code></li>
+                    </ul>
+            </ol>
+        </div>
+        <div class="tile">
             <h3>Redirection operators</h3>
             <ol>
                 <li>Overwriting content if file exists, otherwise file will be created and written. <code>ls > f1.txt</code></li>
                 <li>Appending content if file exists, otherwise file will be created and written. <code>ls >> f2.txt </code></li>
                 <li>Read the file's content and use it as input for the command. <code>grep 'pattern' < f3.txt</code></li>
                 <li>Pass the output of one command as the input to another command. <code>ls | grep 'pattern'</code></li>
+            </ol>
+        </div>
+        <div class="tile">
+            <h3>Process management</h3>
+            <ol>
+                <li>Process Status
+                    <ul>
+                        <li>Displays a snapshot of currently running processes for all users, excluding daemon processes. <code>ps -a</code></li>
+                        <li>Displays a snapshot of all currently active processes, including background (daemon) processes, for all users. <code>ps -ax</code></li>
+                    </ul>
+                <li>Displays real-time information about active processes, including CPU and memory usage. <code>top</code></li>
+                <li>Terminate a process by process id <code>kill pid</code>
+                    <ul>
+                        <li>forcefully <code>kill -9 pid</code>  </li>
+                    </ul>
+                </li>
             </ol>
         </div>
     </div>
