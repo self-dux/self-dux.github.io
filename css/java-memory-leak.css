@@ -30,6 +30,16 @@ a {
     color: white;
 }
 
+table {
+    border-collapse: collapse; /* Ensures borders don't double */
+    width: 100%; /* Optional: Adjusts table width */
+  }
+  th, td {
+    border: 1px solid black; /* Adds borders to table cells */
+    padding: 8px; /* Adds space inside cells */
+    text-align: left; /* Aligns text to the left */
+  }
+
 .container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
