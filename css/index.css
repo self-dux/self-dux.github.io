@@ -41,8 +41,8 @@ header {
 }
 
 .tile:nth-child(1) { background-color: #4caf50; } /* Green */
-.tile:nth-child(2) { background-color: #2196f3; } /* Blue */
-.tile:nth-child(3) { background-color: #ff9800; } /* Orange */
-.tile:nth-child(4) { background-color: #9c27b0; } /* Purple */
+.tile:nth-child(2) { background-color: #ff9800; } /* Orange */
+.tile:nth-child(3) { background-color: #9c27b0; } /* Purple */
+.tile:nth-child(4) { background-color: #2196f3; } /* Blue */
 .tile:nth-child(5) { background-color: #795548; } /* Brown */
 .tile:nth-child(6) { background-color: #607d8b; } /* Teal */
