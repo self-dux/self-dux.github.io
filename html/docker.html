@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="docker commands">
+    <link rel="icon" href="../image/favicon.jpg" type="image/jpg">
+    <title>Docker commands usage guide</title>
+    <link rel="stylesheet" href="../css/common-l1-page.css">
+    <link rel="stylesheet" href="../css/docker.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3HWQ2Q7KQD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-3HWQ2Q7KQD');
+    </script>
+</head>
+<body>
+    <a href="../index.html">
+        <header>
+            <h1>Docker commands usage guide</h1>
+        </header>
+    </a>
+
+    <div class="container">
+        <div class="tile">
+            <h3>Overview</h3>
+            <ol>
+                <li>Initially, applications were hosted on isolated servers, but this approach was expensive.</li>
+                <li>Virtualization was introduced, but it suffered from low performance, limiting its popularity.</li>
+                <li>Docker, introduced by Solomon Hykes, offered a lightweight and efficient solution for application hosting.</li>
+                <li>Docker is an open-source platform that :
+                    <ul>
+                        <li>packages the application, its dependencies, and runtime together.</li>
+                        <li>isolates applications from the underlying host system.</li>
+                    </ul>
+                </li>
+                <li>Install <a href="https://docs.docker.com" style="color: blue; text-decoration: underline;" target="_blank">Docker</a></li>
+            </ol>
+        </div>
+        <div class="tile">
+            <h3>Docker components</h3>
+            <ol>
+                <li>Dockerfile: A file without an extension containing instructions to package the application, including its dependencies and runtime environment.</li>
+                <li>Image: Snapshot of Dockerfile.</li>
+                <li>Container: A running instance of Image, isolated and lightweight.</li>
+                <li>Docker Compose: A YAML file (docker-compose.yaml) that serves as a tool to define and manage multiple containers (images) as a single application.</li>
+                <li>Docker Registry: A repository to store and manage Docker images, allowing easy sharing and distributig. 
+                    <ul>
+                        <li>The default public registry is <a href="https://hub.docker.com" style="color: blue; text-decoration: underline;" target="_blank">Docker Hub</a></li>
+                    </ul>
+                </li>
+                <li>Workflows that :
+                    <ul>
+                        <li>manages  single container
+                            <ul>
+                                <li>Dockerfile -> <code>docker build</code> -> Image -> <code>docker run</code> -> Container</li>
+                            </ul>
+                        </li>
+                        <li>manges multiple containers
+                            <ul>
+                                <li>Multiple Dockerfiles and docker-compose.yml -> <code>docker-compose build</code> -> Multiple images -> <code>docker-compose up</code> -> Multiple containers</li>
+                                <li>Multiple Dockerfiles and docker-compose.yml -> <code>docker-compose up --build</code> -> Multiple images -> Multiple containers</li>
+                            </ul> 
+                        </li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>
