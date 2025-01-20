@@ -121,6 +121,38 @@
                 </li>
             </ol>
         </div>
+        <div class="tile">
+            <h3>Networking</h3>
+            <ol>
+                <li>View network configuration details for network interfaces <code>ifconfig</code></li>
+                <li>Test network connectivity. <code>ping google.com</code></li>
+                <li>Transfer data to and from a server :
+                    <ul>
+                        <li>download a file. <code>curl -O https://example.com/f</code></li>
+                        <li>save output to a file. <code>curl https://example.com/f -o f</code></li>
+                        <li>GET request. <code>curl https://example.com</code></li>
+                        <li>POST request. <code>curl -X POST -H "Content-Type: application/json" -d '{"key":"value"}' https://example.com/resource</code></li>
+                        <li>set custom header. <code>curl -H "Authorization: Bearer token" https://example.com</code></li>
+                        <li>view HTTP response headers. <code>curl -I https://example.com</code></li>
+                        <li>trace network activity. <code>curl -v https://example.com</code> </li>
+                    </ul>
+                </li>
+                <li>Query DNS :
+                    <ul>
+                        <li>retrieve ip-address of domain <code>dig example.com +short</code></li>
+                        <li>find domain name associated with the ip-address <code>dig -x ip-address</code></li>
+                    </ul>
+                </li>
+                <li>Establish a secure, encrypted connection to a remote host: 
+                    <ul>
+                        <li>authentication <code>ssh -i /path/to/private_key user@remote_host</code></li>
+                        <li>via jump host. <code> ssh -J user@jump_host user@target_host</code></li>
+                        <li>forwards a local port to a remote host and port (Tunneling). Maps localhost:8080 on the local machine to localhost:80 on the remote machine. <code>ssh -L 8080:localhost:80 user@remote_host</code></li>
+                    </ul>
+                </li>
+                <li>File transfer. <code>scp /path/to/private_key file-name user@remote_host:/path/to/destination</code></li>
+            </ol>
+        </div>
     </div>
 </body>
 </html>

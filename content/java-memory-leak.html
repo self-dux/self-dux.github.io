@@ -142,7 +142,7 @@
                 </li>
                 <li>How to get a thread dump [ local & remote] ?
                     <ul>
-                        <li>jstack 3054 > dl_td_1.tdump</li>
+                        <li>jstack pid > dl_td_1.tdump</li>
                     </ul>
                 </li>
                 <li>Tools to analyse a thread dump
@@ -172,7 +172,7 @@
                 </li>
                 <li>How to get a heap dump [ local & remote] ?
                     <ul>
-                        <li>jmap -dump:format=b,file=heap_dump.hprof 12345</li>
+                        <li>jmap -dump:format=b,file=heap_dump.hprof pid</li>
                     </ul>
                 </li>
                 <li>Tools to analyse a heap dump
