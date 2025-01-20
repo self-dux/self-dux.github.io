@@ -124,8 +124,8 @@
         <div class="tile">
             <h3>Networking</h3>
             <ol>
-                <li>View network configuration details for network interfaces <code>ifconfig</code></li>
-                <li>Test network connectivity. <code>ping google.com</code></li>
+                <li>View network configuration details for network interfaces. <code>ifconfig</code></li>
+                <li>Test network connectivity. <code>ping example.com</code></li>
                 <li>Transfer data to and from a server :
                     <ul>
                         <li>download a file. <code>curl -O https://example.com/f</code></li>
@@ -151,6 +151,18 @@
                     </ul>
                 </li>
                 <li>File transfer. <code>scp /path/to/private_key file-name user@remote_host:/path/to/destination</code></li>
+            </ol>
+        </div>
+        <div class="tile">
+            <h3>Disk usage</h3>
+            <ol>
+                <li>View disk space usage on file system. <code>df -h</code></li>
+                <li>Display disk space used by file/ directory. <code>du -h f.txt</code>
+                    <ul>
+                        <li>Total disk sapce used by a directory. <code>du -sh dir</code></li>
+                    </ul>
+                </li>
+                <li>Display RAM and swap memory information. <code>free -h</code></li>
             </ol>
         </div>
     </div>
